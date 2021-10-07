@@ -2,7 +2,7 @@ import { getCustomRepository } from "typeorm";
 import { Product } from "../../entity/Product";
 import AppError from "../../errors/AppError";
 
-import { ProductRepository } from "../../repositories/ProductRepository";
+import { ProductRepository } from "../../repositories/ProductsRepository";
 import DeleteProductService from "./DeleteProductService";
 interface IRequest {
     id: string;
