@@ -1,15 +1,14 @@
 import { getCustomRepository } from "typeorm";
-import { Product } from "../../entity/Product";
 import AppError from "../../errors/AppError";
 import { ProductRepository } from "../../repositories/ProductsRepository";
 
 
-interface IRquest{
+interface IRequest{
     id:string;
 }
 
 class DeleteProductService{
-    public async execute({id}:IRquest):Promise<void>{
+    public async execute({id}:IRequest):Promise<void>{
         const productsRepository = getCustomRepository(ProductRepository);
 
         const product = await productsRepository.findOne(id); 
