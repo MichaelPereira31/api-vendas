@@ -3,9 +3,9 @@ import ProductsController from '../controller/product/ProductsController';
 import {celebrate,Joi,Segments} from 'celebrate'
 import { join } from 'path';
 const productsRouter = Router();
-const productsControlller = new ProductsController()
+const productsController = new ProductsController()
 
-productsRouter.get('/',productsControlller.index);
+productsRouter.get('/',productsController.index);
 
 productsRouter.get(
     '/:id',
@@ -14,7 +14,7 @@ productsRouter.get(
             id:Joi.string().uuid().required(),
         },
     }),
-    productsControlller.show);
+    productsController.show);
 
 productsRouter.post(
     '/',
@@ -25,7 +25,7 @@ productsRouter.post(
             quantity:Joi.number().required(),
         },
     }),
-    productsControlller.create);
+    productsController.create);
 
 productsRouter.put(
     '/:id',
@@ -39,7 +39,7 @@ productsRouter.put(
             id:Joi.string().uuid().required()
         }
     }),
-    productsControlller.update);
+    productsController.update);
 
 productsRouter.delete(
     '/:id',
@@ -48,6 +48,6 @@ productsRouter.delete(
             id:Joi.string().uuid().required(),
         }
     }),
-    productsControlller.delete);
+    productsController.delete);
 
 export default productsRouter;
