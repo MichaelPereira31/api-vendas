@@ -22,18 +22,20 @@ export default class UsersController{
         return response.json(user)
     }
 
-    public async create(request:Request, response:Response):Promise<Response>{
-        const{name,email,password} = request.body;
-
-        const createUser = new CreateUserService()
-
+    public async create(request: Request, response: Response): Promise<Response> {
+        const { name, email, password } = request.body;
+    
+        const createUser = new CreateUserService();
+    
         const user = await createUser.execute({
-            name,email,password
-        })
-
-        return response.json(user)
-
-    }
+          name,
+          email,
+          password,
+          
+        });
+    
+        return response.json(user);
+      }
 
     public async update(request:Request, response:Response):Promise<Response>{
         const {name,email,password} = request.body;

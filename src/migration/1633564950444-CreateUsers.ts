@@ -1,5 +1,5 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
-import { isPrimitive } from "util";
+
 
 export class CreateUsers1633564950444 implements MigrationInterface {
 
@@ -31,7 +31,8 @@ export class CreateUsers1633564950444 implements MigrationInterface {
                     {
                         name:'avatar',
                         type:'varchar',
-                        isNullable: true
+                        isNullable: true,
+                        
                     },
                     {
                         name:'created_at',

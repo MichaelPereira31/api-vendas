@@ -22,10 +22,10 @@ usersRouter.post('/',
         [Segments.BODY]:{
             name:Joi.string().required(),
             email:Joi.string().email().required(),
-            password:Joi.string().required(),
-        }
-    })
-,usersController.create)
+            password:Joi.string().required()
+        },
+    }),
+usersController.create,)
 
 usersRouter.put('/:id',celebrate({
     [Segments.BODY]:{
