@@ -4,7 +4,7 @@
    "port": 5432,
    "username": "postgres",
    "password": "docker",
-   "database": "apivendas",
+   "database": "apivendas2",
    "synchronize": true,
    "logging": false,
    "entities": [
