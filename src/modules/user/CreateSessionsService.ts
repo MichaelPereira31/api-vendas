@@ -4,6 +4,7 @@ import { getCustomRepository } from "typeorm";
 import User from "../../entity/User";
 import AppError from "../../errors/AppError";
 import UsersRepository from "../../repositories/UsersRepository";
+import authConfig from "../../config/auth"
 
 interface IRequest{
     email: string;
@@ -27,9 +28,9 @@ class CreateSessionsService{
             throw new AppError('Incorrect email/password combination.',401)
         }
 
-        const token = sign({},'888ef29f04be2029b4096e855f1e543b',{
+        const token = sign({},authConfig.jwt.secret,{
             subject: user.id,
-            expiresIn: '1d',
+            expiresIn: authConfig.jwt.expiresIn,
         })
 
         return {
