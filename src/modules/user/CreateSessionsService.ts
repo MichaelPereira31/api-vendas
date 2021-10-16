@@ -28,3 +28,5 @@ class CreateSessionsService{
         return user
     }
 }
+
+export default CreateSessionsService
