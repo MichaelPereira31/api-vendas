@@ -3,15 +3,17 @@ import AppError from "../../errors/AppError";
 import UsersRepository from "../../repositories/UsersRepository";
 import path = require('path');
 import uploadConfig from '../../config/upload'
-import fs = require('fs');
-import { deflate } from "zlib";
+//import fs = require('fs');
 import User from "../../entity/User";
+//import fs from "fs";
+//import * as fs from 'fs';
+const fs = require('fs');
 
 
-interface IRequest{
-    user_id:string;
-    avatarFilename:string;
-}
+interface IRequest {
+    user_id: string;
+    avatarFilename: string;
+  }
 
 class UpdateUserAvatarService{
 
