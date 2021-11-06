@@ -4,17 +4,22 @@ import { NextFunction, Request, Response } from 'express';
 import { celebrate, errors } from "celebrate";
 import 'express-async-errors';
 import * as bodyParser from "body-parser";
+import uploadConfig from "./config/upload";
 
 import routes from "./routes";
 import AppError from "./errors/AppError";
 import express = require("express");
+import cors = require("cors");
 
 
 const app = express()
-createConnection()
 
-app.use(bodyParser.json())
+createConnection() 
 
+//app.use(bodyParser.json())
+app.use(cors())
+app.use(express.json())
+app.use('/files',express.static(uploadConfig.directory))
 app.use(routes)
 app.use(errors())
 
