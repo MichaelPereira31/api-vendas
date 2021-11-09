@@ -24,3 +24,4 @@ class UserTokensRepository extends Repository<UserToken>{
     
 
 }
+export default UserTokensRepository
