@@ -8,6 +8,7 @@
       "@types/jsonwebtoken": "^8.5.5",
       "@types/multer": "^1.4.7",
       "@types/node": "^8.10.66",
+      "@types/nodemailer": "^6.4.4",
       "jsonwebtoken": "^8.5.1",
       "ts-node": "3.3.0",
       "typescript": "3.3.3333"
@@ -24,6 +25,7 @@
       "express-async-errors": "^3.1.1",
       "multer": "^1.4.3",
       "mysql": "^2.14.1",
+      "nodemailer": "^6.7.3",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.10",
       "typeorm": "0.2.37"
