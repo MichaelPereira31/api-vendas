@@ -1,10 +1,12 @@
 import { getCustomRepository } from "typeorm";
-import AppError from "../../errors/AppError";
-import UsersRepository from "../../repositories/UsersRepository";
+
 import path = require('path');
-import uploadConfig from '../../config/upload'
+import uploadConfig from '../../../config/upload'
+import UsersRepository from "../typeorm/repository/UsersRepository";
+import User from "../typeorm/entity/User";
+import AppError from "../../../errors/AppError";
 //import fs = require('fs');
-import User from "../../entity/User";
+
 //import fs from "fs";
 //import * as fs from 'fs';
 const fs = require('fs');

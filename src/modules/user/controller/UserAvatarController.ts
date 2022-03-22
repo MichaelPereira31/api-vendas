@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
-import UpdateUserAvatarService from "../../modules/user/UpdateUserAvatarService";
+import UpdateUserAvatarService from "../services/UpdateUserAvatarService";
+
 
 
 export default class UserAvatarController {

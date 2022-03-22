@@ -1,14 +1,14 @@
 {
    "type": "postgres",
    "host": "localhost",
-   "port": 5432,
-   "username": "postgres",
-   "password": "docker",
-   "database": "apivendas2",
+   "port": 2354,
+   "username": "esqueci",
+   "password": "esqueci",
+   "database": "api-vendas",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "src/entity/**/*.ts"
+      "src/**/typeorm/entity/*.ts"
    ],
    "migrations": [
       "src/migration/**/*.js"
@@ -17,7 +17,7 @@
       "src/subscriber/**/*.ts"
    ],
    "cli": {
-      "entitiesDir": "src/entity",
+      "entitiesDir": "src/**/typeorm/entity",
       "migrationsDir": "src/migration",
       "subscribersDir": "src/subscriber"
    }

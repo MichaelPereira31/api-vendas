@@ -1,6 +1,7 @@
 import { getCustomRepository } from "typeorm";
-import { Product } from "../../entity/Product";
-import { ProductRepository } from "../../repositories/ProductsRepository";
+import { Product } from "../typeorm/entity/Product";
+import { ProductRepository } from "../typeorm/repository/ProductsRepository";
+
 
 
  class ListProductService {

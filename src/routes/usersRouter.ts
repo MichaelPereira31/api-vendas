@@ -4,9 +4,11 @@ import multer = require("multer");
 import uploadConfig from '../config/upload'
 import { Router } from "express";
 import { isArray } from "util";
-import UsersController from "../controller/user/UsersController";
+
 import isAuthenticated from "../middlewares/isAuthenticateds";
-import UserAvatarController from "../controller/user/UserAvatarController";
+import UsersController from "../modules/user/controller/UsersController";
+import UserAvatarController from "../modules/user/controller/UserAvatarController";
+
 
 
 const usersController = new UsersController()

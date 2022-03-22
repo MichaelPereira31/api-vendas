@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
-import CreateUserService from "../../modules/user/CreateUserService";
-import ListUserService from "../../modules/user/ListUserService";
-import ShowUserService from "../../modules/user/ShowUserService";
-import UpdateUserService from "../../modules/user/UpdateUserService";
+import CreateUserService from "../services/CreateUserService";
+import ListUserService from "../services/ListUserService";
+import ShowUserService from "../services/ShowUserService";
+import UpdateUserService from "../services/UpdateUserService";
+
 
 export default class UsersController{
     public async index(request:Request, response:Response):Promise<Response>{

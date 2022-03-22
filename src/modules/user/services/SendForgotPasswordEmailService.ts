@@ -1,7 +1,8 @@
 import { getCustomRepository } from "typeorm"
-import AppError from "../../errors/AppError"
-import UsersRepository from '../../repositories/UsersRepository'
-import UserTokensRepository from "../../repositories/UserTokensRepository"
+import AppError from "../../../errors/AppError"
+import UsersRepository from "../typeorm/repository/UsersRepository"
+import UserTokensRepository from "../typeorm/repository/UserTokensRepository"
+
 
 interface IRequest{
     email: string;
