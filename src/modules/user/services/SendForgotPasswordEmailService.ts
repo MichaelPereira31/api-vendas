@@ -1,11 +1,12 @@
 import { getCustomRepository } from "typeorm"
 import AppError from "../../../errors/AppError"
+import { UserToken } from "../typeorm/entity/UserToken"
 import UsersRepository from "../typeorm/repository/UsersRepository"
 import UserTokensRepository from "../typeorm/repository/UserTokensRepository"
 
 
 class SendForgotPasswordEmailService{
-    public async execute(email: string):Promise<void>{
+    public async execute(email: string):Promise<UserToken>{
         const userRepositoty = getCustomRepository(UsersRepository)
         const userTokenRepository = getCustomRepository(UserTokensRepository)
 
@@ -17,8 +18,8 @@ class SendForgotPasswordEmailService{
         const token = await userTokenRepository.generate(user.id)
         // const token = await userTokenRepository.generate((await user).id)
 
-        console.log(token)
-        
+        return token
+
     }
 }
 
