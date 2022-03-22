@@ -1,6 +1,6 @@
 import { celebrate, Joi, Segments } from "celebrate";
 import { Router } from "express";
-import SessionsController from "../modules/user/controller/SessionsController";
+import SessionsController from "../controller/SessionsController";
 
 const sessionRouter = Router()
 const sessionsController = new SessionsController()

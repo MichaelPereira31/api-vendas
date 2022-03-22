@@ -1,8 +1,8 @@
 import "reflect-metadata";
-import {createConnection} from "typeorm";
 import { NextFunction, Request, Response } from 'express';
 import { celebrate, errors } from "celebrate";
 import 'express-async-errors';
+import './database'
 import * as bodyParser from "body-parser";
 import uploadConfig from "./config/upload";
 
@@ -13,8 +13,6 @@ import cors = require("cors");
 
 
 const app = express()
-
-createConnection() 
 
 //app.use(bodyParser.json())
 app.use(cors())

@@ -4,26 +4,21 @@ import UsersRepository from "../typeorm/repository/UsersRepository"
 import UserTokensRepository from "../typeorm/repository/UserTokensRepository"
 
 
-interface IRequest{
-    email: string;
-}
-
-
 class SendForgotPasswordEmailService{
-    public async execute({email}:IRequest):Promise<void>{
+    public async execute(email: string):Promise<void>{
         const userRepositoty = getCustomRepository(UsersRepository)
         const userTokenRepository = getCustomRepository(UserTokensRepository)
 
-        const user =  userRepositoty.findByEmail(email)
+        const user = await userRepositoty.findByEmail(email) 
 
         if(!user){
             throw new AppError('User does not exist')
         }
-
-        //const token = await userTokenRepository.generate(user.id)
-        const token = await userTokenRepository.generate((await user).id)
+        const token = await userTokenRepository.generate(user.id)
+        // const token = await userTokenRepository.generate((await user).id)
 
         console.log(token)
+        
     }
 }
 

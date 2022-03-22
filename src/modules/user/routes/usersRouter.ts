@@ -1,13 +1,13 @@
 import { celebrate, Joi, Segments } from "celebrate";
 import multer = require("multer");
 //const uploadConfig = require("uploadConfig");
-import uploadConfig from '../config/upload'
+import uploadConfig from '../../../config/upload'
 import { Router } from "express";
 import { isArray } from "util";
 
-import isAuthenticated from "../middlewares/isAuthenticateds";
-import UsersController from "../modules/user/controller/UsersController";
-import UserAvatarController from "../modules/user/controller/UserAvatarController";
+import isAuthenticated from "../../../middlewares/isAuthenticateds";
+import UsersController from "../controller/UsersController";
+import UserAvatarController from "../controller/UserAvatarController";
 
 
 
